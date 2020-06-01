@@ -1,41 +1,42 @@
-const token = 'NTkyMDkzMjMyODQyODAxMTY4.XRkbag.Ofn8BccRCHoZU2fnLba_vv_MWAQ'
+const token = 'NTkyMDkzMjMyODQyODAxMTY4.XRkbag.Ofn8BccRCHoZU2fnLba_vv_MWAQ' // change it to your discord application's token
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '-'
 const puppeteer = require('puppeteer');
 const ffmpeg = require('ffmpeg');
 
+const dirLocation = 'C:\\Users\\Noam\\Documents\\GitHub\\My-Discord-Bot'
 
 client.login(token);
 
 
 klalotArr = [
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\klalot\\הקללות הנפוצות בכבישי ישראל-[AudioTrimmer.com] (1).mp3',
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\klalot\\הקללות הנפוצות בכבישי ישראל-[AudioTrimmer.com] (2).mp3',
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\klalot\\הקללות הנפוצות בכבישי ישראל-[AudioTrimmer.com].mp3',
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\klalot\\זנזורי [שיא גינס בקללות ברצף]-[AudioTrimmer.com] (1).mp3',
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\klalot\\זנזורי [שיא גינס בקללות ברצף]-[AudioTrimmer.com].mp3',
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\klalot\\נתן זהבי - וגשם של קללות על מאזין שמצדיק תאונת פגע וברח-[AudioTrimmer.com].mp3',
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\klalot\\קללות בונטרילו-[AudioTrimmer.com] (1).mp3',
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\klalot\\קללות בונטרילו-[AudioTrimmer.com] (2).mp3',
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\klalot\\קללות בונטרילו-[AudioTrimmer.com].mp3',
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\klalot\\tilon1.ogg',
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\klalot\\tilon2.ogg',
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\klalot\\tilon3.ogg',
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\klalot\\tilon4.ogg',
+    dirLocation + '\\sound_effects\\klalot\\הקללות הנפוצות בכבישי ישראל-[AudioTrimmer.com] (1).mp3',
+    dirLocation + '\\sound_effects\\klalot\\הקללות הנפוצות בכבישי ישראל-[AudioTrimmer.com] (2).mp3',
+    dirLocation + '\\sound_effects\\klalot\\הקללות הנפוצות בכבישי ישראל-[AudioTrimmer.com].mp3',
+    dirLocation + '\\sound_effects\\klalot\\זנזורי [שיא גינס בקללות ברצף]-[AudioTrimmer.com] (1).mp3',
+    dirLocation + '\\sound_effects\\klalot\\זנזורי [שיא גינס בקללות ברצף]-[AudioTrimmer.com].mp3',
+    dirLocation + '\\sound_effects\\klalot\\נתן זהבי - וגשם של קללות על מאזין שמצדיק תאונת פגע וברח-[AudioTrimmer.com].mp3',
+    dirLocation + '\\sound_effects\\klalot\\קללות בונטרילו-[AudioTrimmer.com] (1).mp3',
+    dirLocation + '\\sound_effects\\klalot\\קללות בונטרילו-[AudioTrimmer.com] (2).mp3',
+    dirLocation + '\\sound_effects\\klalot\\קללות בונטרילו-[AudioTrimmer.com].mp3',
+    dirLocation + '\\sound_effects\\klalot\\tilon1.ogg',
+    dirLocation + '\\sound_effects\\klalot\\tilon2.ogg',
+    dirLocation + '\\sound_effects\\klalot\\tilon3.ogg',
+    dirLocation + '\\sound_effects\\klalot\\tilon4.ogg',
 ]
 
 shtockArr = [
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\shtokeyal.ogg',
-    //'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\shtokerez.ogg', // erez dosent sound well
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\shtokzaguri.ogg'
+    dirLocation + '\\sound_effects\\shtokeyal.ogg',
+    //dirLocation + '\\sound_effects\\shtokerez.ogg', // erez dosent sound well
+    dirLocation + '\\sound_effects\\shtokzaguri.ogg'
 ]
 
 helloArr = [
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\hello\\hello1.ogg',
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\hello\\hello2.ogg',
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\hello\\hello3.ogg',
-    'C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\hello\\hello4.ogg'
+    dirLocation + '\\sound_effects\\hello\\hello1.ogg',
+    dirLocation + '\\sound_effects\\hello\\hello2.ogg',
+    dirLocation + '\\sound_effects\\hello\\hello3.ogg',
+    dirLocation + '\\sound_effects\\hello\\hello4.ogg'
 ]
 
 const activities_list = [
@@ -202,7 +203,7 @@ client.on('message', async message => {
         if(message.member.voiceChannel){ // if he is in a voice channel
             message.member.voiceChannel.join()
                 .then(async (connection) => {
-                    const dispatchr = connection.playFile('C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\ckicket\\Cricket_Sound.mp3', {volume : 0.25});
+                    const dispatchr = connection.playFile(dirLocation + '\\sound_effects\\ckicket\\Cricket_Sound.mp3', {volume : 0.25});
                     dispatchr.on('end',async () =>{
                         message.member.voiceChannel.leave();
                     });
@@ -236,7 +237,7 @@ client.on('message', async message => {
         if(message.member.voiceChannel){ // if he is in a voice channel
             message.member.voiceChannel.join()
                 .then(async (connection) => {
-                    const dispatchr = connection.playFile('C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\emergency\\zagu.ogg', {volume : 0.50});
+                    const dispatchr = connection.playFile(dirLocation + '\\sound_effects\\emergency\\zagu.ogg', {volume : 0.50});
                     dispatchr.on('end',async () =>{
                         await sleep(1000);
                         message.member.voiceChannel.leave();
@@ -253,7 +254,7 @@ client.on('message', async message => {
         if(message.member.voiceChannel){ // if he is in a voice channel
             message.member.voiceChannel.join()
                 .then(async (connection) => {
-                    const dispatchr = connection.playFile('C:\\Users\\Noam\\Desktop\\Yogev\\sound_effects\\bwe\\zaguBwe.ogg', {volume : 0.50});
+                    const dispatchr = connection.playFile(dirLocation + '\\sound_effects\\bwe\\zaguBwe.ogg', {volume : 0.50});
                     dispatchr.on('end',async () =>{
                         await sleep(1000);
                         message.member.voiceChannel.leave();
