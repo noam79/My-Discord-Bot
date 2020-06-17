@@ -10,21 +10,6 @@ const dirLocation = 'C:\\Users\\Noam\\Documents\\GitHub\\My-Discord-Bot'
 client.login(token);
 
 
-klalotArr = [
-    dirLocation + '\\sound_effects\\klalot\\הקללות הנפוצות בכבישי ישראל-[AudioTrimmer.com] (1).mp3',
-    dirLocation + '\\sound_effects\\klalot\\הקללות הנפוצות בכבישי ישראל-[AudioTrimmer.com] (2).mp3',
-    dirLocation + '\\sound_effects\\klalot\\הקללות הנפוצות בכבישי ישראל-[AudioTrimmer.com].mp3',
-    dirLocation + '\\sound_effects\\klalot\\זנזורי [שיא גינס בקללות ברצף]-[AudioTrimmer.com] (1).mp3',
-    dirLocation + '\\sound_effects\\klalot\\זנזורי [שיא גינס בקללות ברצף]-[AudioTrimmer.com].mp3',
-    dirLocation + '\\sound_effects\\klalot\\נתן זהבי - וגשם של קללות על מאזין שמצדיק תאונת פגע וברח-[AudioTrimmer.com].mp3',
-    dirLocation + '\\sound_effects\\klalot\\קללות בונטרילו-[AudioTrimmer.com] (1).mp3',
-    dirLocation + '\\sound_effects\\klalot\\קללות בונטרילו-[AudioTrimmer.com] (2).mp3',
-    dirLocation + '\\sound_effects\\klalot\\קללות בונטרילו-[AudioTrimmer.com].mp3',
-    dirLocation + '\\sound_effects\\klalot\\tilon1.ogg',
-    dirLocation + '\\sound_effects\\klalot\\tilon2.ogg',
-    dirLocation + '\\sound_effects\\klalot\\tilon3.ogg',
-    dirLocation + '\\sound_effects\\klalot\\tilon4.ogg',
-]
 
 shtockArr = [
     dirLocation + '\\sound_effects\\shtokeyal.ogg',
@@ -181,23 +166,6 @@ client.on('message', async message => {
         browser.close();
     }
 
-    if(command === 'קללות'){
-        if(!message.guild) return; // may not work
-        if(message.member.voiceChannel){ // if he is in a voice channel
-            message.member.voiceChannel.join()
-                .then(async (connection) => {
-                    const dispatchr = connection.playFile(klalotArr[getRndInteger(0, klalotArr.length)], {volume : 0.20});
-                    dispatchr.on('end',async () =>{
-                        await sleep(2000);
-                        message.member.voiceChannel.leave();
-                    });
-                })
-                .catch(console.log);
-        }
-        else{
-            message.reply('אתה לא בשיחה');
-        }
-    }
 
     if(command === 'צרצר'){ // play cricket sound
         if(message.member.voiceChannel){ // if he is in a voice channel
