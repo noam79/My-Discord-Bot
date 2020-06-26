@@ -102,10 +102,6 @@ client.on('message', async message => {
                     value: 'מספים מישהו בוואצאפ\nSyntax: -send ContactName Times Content\nעד 55 הודעות במכה',
                 },
                 {
-                    name: 'קללות',
-                    value: 'voice channel מקלל אתכם ב'
-                },
-                {
                     name: 'צרצר',
                     value: 'קולות של צרצר, למקרה שמישהו מספר בדיחה גרועה'
                 },
