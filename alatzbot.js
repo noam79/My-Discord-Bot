@@ -1,3 +1,4 @@
+
 const token = 'NTkyMDkzMjMyODQyODAxMTY4.XRkbag.Ofn8BccRCHoZU2fnLba_vv_MWAQ' // change it to your discord application's token
 const Discord = require('discord.js');
 const client = new Discord.Client();
